@@ -2,22 +2,24 @@
   <div class="row">
     <div class="col-md-3">
       <nav class="nav flex-column">
-        <a class="nav-link" >Personal Info</a>
+        <a class="nav-link" name="personal-info" >Personal Info</a>
+       
         <a class="nav-link" >Registered Address</a>
-        <a class="nav-link" >Correspodence Address</a
-        >
+        <a class="nav-link" >Correspodence Address</a>
         <a class="nav-link" href="#">Company Info</a>
         <a class="nav-link" href="#">Update Password</a>
         <a class="nav-link" href="#">Update security questions</a>
         <a class="nav-link" href="#">Payment details</a>
         <a class="nav-link" href="#">Quality</a>
-        <a class="nav-link" href="#">Bank Details</a>
+       
+        <a class="nav-link" id="bank-details">Bank Details</a>
       </nav>
     </div>
     <div class="col-md-9">
+        
       <mat-card>
        
-        <mat-card-title>Personal Info</mat-card-title>
+        <mat-card-title>  Personal Info</mat-card-title>
         <mat-card-content>
           <div>
             <mat-form-field appearance="outline">
@@ -26,7 +28,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>Emails</mat-label>
+              <mat-label>Email</mat-label>
               <input matInput />
             </mat-form-field>
             <br />
@@ -254,7 +256,7 @@
       </mat-card>
 
       <mat-card>
-        <mat-card-title>Bank Details</mat-card-title>
+        <mat-card-title> <a href="#bank details">Bank Details</a> </mat-card-title>
         <mat-card-content>
             <div class="container">
                 <mat-form-field appearance = "outline">
