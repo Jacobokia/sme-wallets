@@ -287,7 +287,7 @@
               <div>
                   <mat-form-field appearance="outline">
                       <mat-label>Company Name</mat-label>
-                      <input matInput name="companyname" required #companyInfoName="ngModel" [(ngModel)]="companyname" />
+                      <input matInput name="companyName" required #companyInfoName="ngModel" [(ngModel)]="companyName" />
                     </mat-form-field>
                     <span class="alert alert-danger" [hidden]="!companyInfoName.touched ||companyInfoName.valid">Please enter the Company Name</span>
               </div>
@@ -343,24 +343,24 @@
 
         <mat-card-content>
           <div>
-            <form action="">
+            <form #updatePassword="ngForm" (ngSumbit)= "onSubmitUpdatePassword(updatePassword)">
               <mat-form-field appearance="outline">
                 <mat-label>Current Email</mat-label>
-                <input matInput name="currentemail" />
+                <input matInput name="currentemail" #currentEmail= "ngModel" [(ngModel)]="currentemail"/>
               </mat-form-field>
               <br />
 
               <mat-form-field appearance="outline">
                 <mat-label>New Password</mat-label>
-                <input matInput name="newpassword" />
+                <input matInput name="newpassword" #newPassword="ngModel" [(ngModel)]="newpassword"/>
               </mat-form-field>
               <br />
               <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput name="confirmpassword" />
+                <input matInput name="confirmpassword" #confirmPassword="ngModel" [(ngModel)]="confirmpassword" />
               </mat-form-field>
               <br />
-              <button mat-raised-button color="primary" type="submit">
+              <button mat-raised-button color="primary" >
                 Update
               </button>
             </form>
@@ -375,7 +375,7 @@
 
         <mat-card-content>
           
-            <form #securityQuestion="ngForm">
+            <form #securityQuestions="ngForm" (ngSubmit)="onSubmitSecurityQuestions(securityQuestion)">
 
               <div>
                 <mat-form-field appearance="outline">
@@ -423,11 +423,14 @@
                 </mat-form-field>
                 <span class="alert alert-danger" [hidden]="!childhoodFriend.touched ||childhoodFriend.valid">Please enter your childhood favorite food</span>
               </div>
+            {{securityQuestions.value|json}}
 
-              <button mat-raised-button color="primary" type="submit">
+
+              <button mat-raised-button color="primary" >
                 Update
               </button>
             </form>
+
           
         </mat-card-content>
       </mat-card>
@@ -437,7 +440,7 @@
 
         <mat-card-content>
           <div>
-            <form #paymentDetails="ngForm" (ngSubmit)="onSubmit(form)">
+            <form #paymentDetails="ngForm" (ngSubmit)="onSubmitPaymentDetails(paymentDetails)">
               <div>
                   <mat-form-field appearance="outline">
                       <mat-label>Order Currency</mat-label>

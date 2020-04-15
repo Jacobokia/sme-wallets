@@ -137,14 +137,6 @@ export class SideAccountSettingsComponent implements OnInit {
 
     console.log(`the next step: ${JSON.stringify(theRegistration, null, 2)} `);
 
-
-
-// theRegistration[timestampStr] = DateUtils.convertDateFormatToParsable(this.registrationInfo.timestamp);
-    // theRegistration.timestamp = null;// theRegistration[timestampStr] = DateUtils.convertDateFormatToParsable(this.registrationInfo.timestamp);
-    // theRegistration.timestamp = null;
-
-
-
     const timestampStr = 'timestampStr';
     
 
@@ -209,6 +201,27 @@ export class SideAccountSettingsComponent implements OnInit {
       // console.log(`the registr: ${JSON.stringify(e, null, 2)} `);
     });
 
+  }
+
+  onSubmitSecurityQuestions(form: NgForm){
+    const securityQuestionsObject = form.value;
+
+    console.log(form.value);
+
+    
+
+
+  }
+
+  onSubmitUpdatePassword(form:NgForm){
+    const updatePassword = form.value;
+    console.log(form.value);
+
+    let updateUserPassword = Registration.createInstance();
+    updateUserPassword = this.registration;
+
+    
+    
   }
 
 
